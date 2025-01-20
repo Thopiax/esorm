@@ -1303,6 +1303,8 @@ async def setup_mappings(*_, debug=False):
                         v['index'] = extra['index']
                 else:
                     res['index'] = extra['index']
+            if 'es_fields' in extra:
+                res.update(extra['es_fields'])
             properties[name] = res
 
     # Process all models and create mappings
